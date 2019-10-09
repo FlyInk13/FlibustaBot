@@ -10,11 +10,13 @@ const lang = TempLang.fromFile(config.LANG_FILE);
 const callback = vk.init_callback_api(config.CALLBACK_API_CONFIRMATION_TOKEN);
 const FLIBUSTA_HOST = config.FLIBUSTA_HOST;
 const PROJECT_HOST = config.PROJECT_HOST
+const PROJECT_LINK = config.PROJECT_LINK
+const CALLBACK_API_PATH = config.CALLBACK_API_PATH;
 const port = config.PORT;
 
 const text  = lang.static;
 const links = {};
-const cmds  = [{
+const commands  = [{
     r: /^(epub|pdf|fb2|mobi|djvu) ([0-9]+)$/i,
     f: (msg, format, id) => {
         var link = "/" + Math.random().toString(16).substr(2) +
@@ -58,12 +60,12 @@ vk.on('message', (event, msg) => {
     event.ok();
     if (msg.out) return;
 
-    cmds.forEach((cmd) => {
-        if (!cmd.r.test(msg.body) || msg.ok) return;
+    commands.forEach((command) => {
+        if (!command.r.test(msg.body) || msg.ok) return;
         msg.ok = true;
-        var args = msg.body.match(cmd.r) || [];
+        var args = msg.body.match(command.r) || [];
         args[0] = msg;
-        cmd.f.apply(null, args);
+        command.f.apply(null, args);
     });
 
     if (msg.ok !== true) {
@@ -72,13 +74,13 @@ vk.on('message', (event, msg) => {
 });
 
 http.Server(function onRequest(req, res) {
-    if (req.url == "/callback_api/") {
+    if (req.url == CALLBACK_API_PATH) {
         return callback(req, res);
     }
 
     if (!links[req.url]) {
         res.writeHead(302, {
-            Location: 'https://vk.me/f_bot'
+            Location: PROJECT_LINK
         });
         return res.end();
     }
