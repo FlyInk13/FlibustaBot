@@ -1,0 +1,76 @@
+@ Date
+@ static
+
+Date_DateTimeFormat: D JG Y H:i:s (UTC+0)
+Date_MountNamesGen
+    января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря
+
+download
+    Ваша одноразовая ссылка для скачивания: {PROJECT_HOST}{link}
+    Если появилась ошибка, то попробуйте другой формат или другой ID.
+    Если у вас iOS и вы видите белый экран, то скопируйте ссылку и откройте ее в браузере.
+book
+    {name}
+    Автор: {author}
+    ID: {id}
+    Доступные форматы: {formats}
+
+
+static_help
+    Бот позволяет скачивать книги.
+    Для поиска книг введите слово найти и название книги.
+    Если необходимо найти определенного автора то сначала пишите его фамилию, а потом тире и назавние книги
+    Для скачивания книги пишите формат и ее номер.
+    \n
+    Примеры команд:
+    Найти Цветы для Элджернона
+    найти Паустовский - Телеграмма
+    epub 96290
+
+static_command_404
+    Прости, я тебя не понял, для поиска книги напиши найти и название книги.
+
+static_sps
+    Не за что ;-)
+
+static_books_404
+    Не нашлось ни единой книги, удовлетворяющей вашим требованиям
+
+static_download_help
+    Для скачивания введите её формат и id.
+    Например: epub 12345.
+
+static_error
+    Произошла ошибка
+
+static_download_page_error
+    <html><head>
+        <meta charset="UTF-8">
+        <title>Книга не найдена.</title>
+        <meta property="og:title" content="Книга не найдена" />
+        <mata property="og:description" content="К сожалению, запрашиваемая Вами книга не найдена.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    </head>
+    <body>
+        <table cellpadding="0" border="0" width="100%" height="100%"><tbody><tr>
+        <td align="center" valign="middle">
+        Ошибка! 404 Not Found.<br>
+        К сожалению, запрашиваемая Вами книга не найдена.
+        </td></tr></tbody></table>
+    </body></html>
+
+static_download_page_server_error
+    <html><head>
+        <meta charset="UTF-8">
+        <title>Произошла ошибка.</title>
+        <meta property="og:title" content="Произошла ошибка" />
+        <mata property="og:description" content="К сожалению, произошла ошибка.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    </head>
+    <body>
+        <table cellpadding="0" border="0" width="100%" height="100%"><tbody><tr>
+        <td align="center" valign="middle">
+        Ошибка! 500 Not Found.<br>
+        К сожалению, произошла ошибка.
+        </td></tr></tbody></table>
+    </body></html>

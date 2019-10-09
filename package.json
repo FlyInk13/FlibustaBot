@@ -1,0 +1,35 @@
+{
+  "name": "flibusta_bot",
+  "version": "1.0.0",
+  "description": "Бот ВКонтакте позволяющий искать книги на сайте проекта Flibusta.",
+  "main": "FlibustaBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlyInk13/FlibustaBot.git"
+  },
+  "keywords": [
+    "Flibusta",
+    "bot",
+    "vk",
+    "api",
+    "tor"
+  ],
+  "dependencies": {
+    "VK-Promise": "^0.5.1",
+    "hipc": "*",
+    "templang": "*",
+    "tor-request": "*"
+  },
+  "devDependencies": {
+    "pm2": "*"
+  },
+  "author": "Flyink13",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlyInk13/FlibustaBot/issues"
+  },
+  "homepage": "https://github.com/FlyInk13/FlibustaBot#readme"
+}
